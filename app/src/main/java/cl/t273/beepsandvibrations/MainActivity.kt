@@ -9,8 +9,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Tab
-import androidx.compose.material.TabRow
+import androidx.compose.material3.Tab
+import androidx.compose.material3.TabRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -51,13 +51,13 @@ class MainActivity : ComponentActivity() {
 fun MainScreen() {
     val selectedColor = Grey
     val unselectedColor = Grey.copy(alpha = 0.6f)
-    val tabs = listOf("Sonidos \uD83C\uDFB5", "Vibración \uD83D\uDCF3")
+    val tabs = listOf("Sounds \uD83C\uDFB5", "Vibrations \uD83D\uDCF3")
     var selectedTabIndex by remember { mutableStateOf(0) }
 
     Column {
         TabRow(
             selectedTabIndex = selectedTabIndex,
-            backgroundColor = Navy,
+            containerColor = Navy,
             contentColor = selectedColor
         ) {
             tabs.forEachIndexed { index, title ->
